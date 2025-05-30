@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 
-const API_KEY = 'efb33dee9a5b4f4998a24631253005'; // Your API key
+const API_KEY = 'efb33dee9a5b4f4998a24631253005';
 
 function App() {
   const [city, setCity] = useState('');
@@ -15,6 +15,9 @@ function App() {
     setWeather(null);
 
     try {
+      // Optional: artificial delay to make loading visible (uncomment if needed)
+      // await new Promise(res => setTimeout(res, 500));
+
       const response = await fetch(
         `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}`
       );
@@ -44,7 +47,7 @@ function App() {
         <button onClick={handleSearch}>Search</button>
       </div>
 
-      {loading && <p className="loading">Loading data…</p>}
+      {loading && <p className="loading">Loading data...</p>}
 
       {weather && (
         <div className="weather-cards">
