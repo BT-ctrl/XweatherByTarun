@@ -46,9 +46,11 @@ button:hover {
 }
 
 .loading {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   font-style: italic;
+  color: black;
 }
+
 
 .weather-cards {
   display: flex;
